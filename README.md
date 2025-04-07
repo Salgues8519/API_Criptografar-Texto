@@ -45,6 +45,3 @@ Node.js, Express, TypeScript, Postman
 🧠 Autor
 Feito com 💻 e ☕ por Rafael Salgues
 
-<div>
-<img src ="![Image](https://github.com/user-attachments/assets/ba72266f-20b9-4e11-9665-92aea6120223)" />
-</div>
