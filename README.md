@@ -44,3 +44,7 @@ Node.js, Express, TypeScript, Postman
 
 🧠 Autor
 Feito com 💻 e ☕ por Rafael Salgues
+
+## 💻 Preview da Aplicação
+
+![Preview da aplicação](./public/screenshot.png)
