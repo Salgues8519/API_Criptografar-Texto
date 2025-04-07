@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Text Encrypto</title>
+</head>
+<body>
+    <h1>Text Encryptor</h1>
+
+    <label for="inputText">Texto original:</label><br>
+    <textarea id="inputText" rows="4" cols="50" placeholder="Digite seu texto aqui: "></textarea><br><br>
+
+    <button id="encryptBtn">Criptografar</button><br><br>
+
+    <label for="outputText">Texto criptografado:</label><br>
+    <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+
+    <script>
+        document.getElementById('encryptBtn').addEventListener('click', async () => {
+            const input = document.getElementById('inputText').value;
+
+            if (!input) {
+                alert("Digite algum texto para criptografar!");
+                return;
+            }
+
+            try {
+                const response = await fetch('/cripto', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: input }) 
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('outputText').value = data.result;
+                } else {
+                    alert(data.message || "Erro ao criptografar");
+                }
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                alert("Erro ao se conectar com o servidor");
+            }
+        });
+    </script>
+</body>
+</html>
