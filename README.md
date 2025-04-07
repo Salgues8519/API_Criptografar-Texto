@@ -14,10 +14,35 @@ Uma API simples desenvolvida com **TypeScript + Node.js + Express**, que criptog
 
 ## 📁 Estrutura do Projeto
 
-├── src/ │ ├── controller.ts # Função que lida com a rota POST │ 
-├── encryptor.ts # Lógica de criptografia │ ├── routes.ts # Rotas da aplicação │ 
-├── index.ts # Configuração do servidor Express │ └── public/ │ ├── index.html # Frontend simples │ 
-└── style.css # Estilo visual (opcional) ├── dist/ # Código transpilado em JavaScript ├── .env # Variáveis de ambiente ├── tsconfig.json # Configurações do TypeScript └── package.json
+
+├── src/ 
+
+│├── controller.ts # Função que lida com a rota POST 
+
+│├── encryptor.ts # Lógica de criptografia 
+
+
+│├── routes.ts # Rotas da aplicação 
+
+
+│├── index.ts # Configuração do servidor Express 
+
+
+│└── public/ 
+
+
+│├── index.html # Frontend simples 
+
+
+│└── style.css # Estilo visual (opcional) 
+
+├── dist/ # Código transpilado em JavaScript 
+
+├── .env # Variáveis de ambiente 
+
+├── tsconfig.json # Configurações do TypeScript 
+
+└── package.json
 
 ## 🚀 Como rodar o projeto
 
