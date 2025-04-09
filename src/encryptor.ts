@@ -1,13 +1,46 @@
+const criptoMap: Record<string, string[]> = {
+    'A': ['@', '!'], 'a': ['@', '!'],
+    'B': ['&', '#'], 'b': ['&', '#'],
+    'C': ['¢', '^'], 'c': ['¢', '^'],
+    'D': ['¬', '~'], 'd': ['¬', '~'],
+    'E': ['3', '€'], 'e': ['3', '€'],
+    'F': ['*', '%'], 'f': ['*', '%'],
+    'G': ['+', '='], 'g': ['+', '='],
+    'H': ['/', '|'], 'h': ['/', '|'],
+    'I': ['<', '«'], 'i': ['<', '«'],
+    'J': ['~', '`'], 'j': ['~', '`'],
+    'K': ['4', 'k'], 'k': ['4', 'k'],
+    'L': ['>', '£'], 'l': ['>', '£'],
+    'M': ['Ω', 'M'], 'm': ['Ω', 'm'],
+    'N': ['φ', 'n'], 'n': ['φ', 'n'],
+    'O': ['δ', '0'], 'o': ['δ', '0'],
+    'P': ['1', 'p'], 'p': ['1', 'p'],
+    'Q': ['ß', 'q'], 'q': ['ß', 'q'],
+    'R': ['Σ', 'R'], 'r': ['Σ', 'r'],
+    'S': ['╞', '$'], 's': ['╞', '$'],
+    'T': ['╚', 'T'], 't': ['╚', 't'],
+    'U': ['§', 'u'], 'u': ['§', 'u'],
+    'V': ['∩', 'v'], 'v': ['∩', 'v'],
+    'W': ['■', 'w'], 'w': ['■', 'w'],
+    'X': ['╨', 'x'], 'x': ['╨', 'x'],
+    'Y': ['µ', 'y'], 'y': ['µ', 'y'],
+    'Z': ['0', 'z'], 'z': ['0', 'z']
+};
+
 export function encrypt(text: string): string {
     let result = '';
 
     for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        const charCode = text.charCodeAt(i); 
-        const shift = (i * 3 + 7) % 10; 
-        const newCharCode = charCode + shift;
+        const letter = text[i];
 
-        result += String.fromCharCode(newCharCode);
+        if (criptoMap[letter]) {
+            const symbols = criptoMap[letter];
+            
+            const shift = (i * 7 + 3) % symbols.length;
+            result += symbols[shift];
+        } else {
+            result += letter;
+        }
     }
 
     return result;
